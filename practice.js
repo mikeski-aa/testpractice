@@ -124,6 +124,35 @@ function caesarCipher(inputString, key) {
   return newString.join("");
 }
 
+// analyze array function
+const analyzeArray = (input) => {
+  let sortedArr = input.sort((a,b) => {
+    return a-b;
+  });
 
+  const average = () => {
+    let init = 0;
+      return (input.reduce( (acc, curr) => acc + curr, init))/input.length;
+  };
 
-export { calc, reverse, capitalize, caesarCipher };
+  const min = () => {
+    return sortedArr[0];
+  }
+
+  const max = () => {
+    return sortedArr[sortedArr.length-1];
+  }
+
+  const length = () => {
+    return input.length;
+  }
+
+  return {
+    average,
+    min,
+    max,
+    length
+  }
+}
+
+export { calc, reverse, capitalize, caesarCipher, analyzeArray };

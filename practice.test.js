@@ -1,4 +1,4 @@
-import {reverse, capitalize, calc, caesarCipher} from './practice.js';
+import {reverse, capitalize, calc, caesarCipher, analyzeArray} from './practice.js';
 
 
 // check for capitalization 
@@ -51,3 +51,21 @@ test('Contains non char values', () => {
     expect(caesarCipher('xe.ox', 5)).toMatch('cj.tc');
 });
 
+// array analyze
+const object = analyzeArray([1,8,3,4,2,6]);
+
+test('analyze array average', () => {
+    expect(object.average()).toBe(4);
+});
+
+test('analyze array min', () => {
+    expect(object.min()).toBe(1);
+});
+
+test('analyze array max', () => {
+    expect(object.max()).toBe(8);
+});
+
+test('analyze array length', () => {
+    expect(object.length()).toBe(6);
+});
